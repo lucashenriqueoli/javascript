@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>País</title>
+</head>
+<body>
+    <h1>Bem vindo ao Brasil</h1>
+    Qual é o seu país de nascimento? <input type="text" name="txtcountry" id="txtcountry">
+    <input type="button" value="verificar" onclick="verify()">
+    <div id="res">
+
+    </div>
+    <script>
+
+        function verify() {
+            var txtc = window.document.querySelector('input#txtcountry')
+            var res = window.document.querySelector('div#res')
+            var nasc = txtc.value
+            res.innerHTML = `<p>Você é do(a)(s) <strong>${nasc}</strong></p>`
+            if (nasc == 'Brasil') {
+                res.innerHTML += 'Brasileiro'
+            } else {
+                res.innerHTML += `Estrangeiro do(s) ${nasc}`
+            }
+        }
+    </script>
+</body>
+</html>
